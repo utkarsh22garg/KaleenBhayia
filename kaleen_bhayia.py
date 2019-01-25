@@ -109,7 +109,6 @@ class Kaleen_bhayia(object):
                 content="check out below link \n"+st;
             else:
                 content="Please type exact name :)\n"+st;
-        bot_handler.send_reply(message, content)
         else:
             #print(message['content'])
             content=WitHandler.getInfo(message['content'])
