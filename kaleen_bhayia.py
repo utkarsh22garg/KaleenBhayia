@@ -10,6 +10,7 @@ from music import Music
 from send_message import Send_message
 from Meeting import Meeting
 from pnr import Pnr
+from wit_handle import WitHandler
 import sys
 import threading
 import os
@@ -27,16 +28,16 @@ class Kaleen_bhayia(object):
         check=string[0].lower()
         
         if check=="calculate":
-            content=Calculator.calculate(string)
+            content=Calculator.calculate(string[1])
         elif check=="coding_contest":
-        	content=Coding().getList();
+            content=Coding().getList();
         elif check.lower()=='define':
             dictword=string[1]
             content=Dictionary.words(dictword)
         elif check.lower()=='telljoke':
             content=Joke.tellJoke()
         elif check == "cricknews":
-        	content = Cricket().news()
+            content = Cricket().news()
         elif check=="proxy":
             if len(string) > 1:
                 if string[1].lower()=="working":
@@ -95,5 +96,9 @@ class Kaleen_bhayia(object):
             except:
                 p=int(content)
                 content=Sympton.getIssueId(str(p),gender,dob)
+        else:
+            #print(message['content'])
+            content=WitHandler.getInfo(message['content'])
         bot_handler.send_reply(message, content)
+    
 handler_class = Kaleen_bhayia

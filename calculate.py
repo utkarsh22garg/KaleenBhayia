@@ -1,6 +1,6 @@
 class Calculator(object):
 	def calculate(word):
-		expression = word[1]
+		expression = word
 		return eval(expression)
 
 		
