@@ -1,6 +1,7 @@
 from wit import Wit
 import json
 from calculate import Calculator
+from proxy import Proxy
 class WitHandler:
 	def getInfo(message_string):
 		client_access_token="PQCM32TG4TIECXXTP5EGA2AFDLHTAPMD"
@@ -22,6 +23,12 @@ class WitHandler:
 		if check=="calculate":
 			# print(value)
 			content=Calculator.calculate(str(value))
+		elif check=="intent" and value=="proxy_get":
+			content=Proxy.getProxyStatus()
+			content="Proxies Status--->\n\n"+content
+		elif check=="intent" and value=="proxy_area":
+			content=Proxy.getWorkingProxy()
+			content="Working Proxies in Your Area \n\n"+content
 		else:
 			content="I couldn't understand what you just said!! Please try again"
 

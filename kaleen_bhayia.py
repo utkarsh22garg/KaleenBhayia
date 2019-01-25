@@ -46,7 +46,7 @@ class Kaleen_bhayia(object):
                 elif string[1].lower()=="help":
                     content=Proxy.getHelpList();
                 else:
-                    content="try proxy help"
+                    content=WitHandler.getInfo(message['content'])
             else:         
                 content=Proxy.getProxyStatus();
                 content="Proxies Status--->\n\n"+content;
