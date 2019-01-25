@@ -16,6 +16,10 @@ import threading
 import os
 import signal
 from subprocess import check_output
+from friend_location import FriendLocation
+#from song_mood import Mood
+from sympton import Sympton
+import webbrowser
 #from song_mood import Mood
 from sympton import Sympton
 class Kaleen_bhayia(object):
@@ -26,18 +30,17 @@ class Kaleen_bhayia(object):
         string =message['content'].split()
         content="something went wrong"
         check=string[0].lower()
-        
         if check=="calculate":
-            content=Calculator.calculate(string[1])
+            content=Calculator.calculate(string)
         elif check=="coding_contest":
-            content=Coding().getList();
+        	content=Coding().getList();
         elif check.lower()=='define':
             dictword=string[1]
             content=Dictionary.words(dictword)
         elif check.lower()=='telljoke':
             content=Joke.tellJoke()
         elif check == "cricknews":
-            content = Cricket().news()
+        	content = Cricket().news()
         elif check=="proxy":
             if len(string) > 1:
                 if string[1].lower()=="working":
@@ -96,9 +99,18 @@ class Kaleen_bhayia(object):
             except:
                 p=int(content)
                 content=Sympton.getIssueId(str(p),gender,dob)
+        elif check=="search":
+            st=" ";
+            strlist=string[1:];
+            st=st.join(strlist);
+            st=FriendLocation.plot(st);
+            if "https" in st:
+                webbrowser.open(st);
+                content="check out below link \n"+st;
+            else:
+                content="Please type exact name :)\n"+st;
         else:
             #print(message['content'])
             content=WitHandler.getInfo(message['content'])
         bot_handler.send_reply(message, content)
-    
 handler_class = Kaleen_bhayia
