@@ -1,6 +1,5 @@
 import pyrebase
 import webbrowser
-import gmplot
 class FriendLocation(object):
 	def plot(string):
 		config = {
