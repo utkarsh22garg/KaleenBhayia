@@ -2254,17 +2254,14 @@ class Sympton(object):
     return st
   def getIssueId(symptoms,gender,dob):
     print(symptoms,gender,dob);
-    token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFuaWtldDQ2OGtyQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc2lkIjoiMTgzNyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdmVyc2lvbiI6IjEwOCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGltaXQiOiIxMDAiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXAiOiJCYXNpYyIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGFuZ3VhZ2UiOiJlbi1nYiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvZXhwaXJhdGlvbiI6IjIwOTktMTItMzEiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXBzdGFydCI6IjIwMTktMDEtMjUiLCJpc3MiOiJodHRwczovL2F1dGhzZXJ2aWNlLnByaWFpZC5jaCIsImF1ZCI6Imh0dHBzOi8vaGVhbHRoc2VydmljZS5wcmlhaWQuY2giLCJleHAiOjE1NDg0NTUzNzUsIm5iZiI6MTU0ODQ0ODE3NX0.Bx7VEHJsIP2oTl3jlyIwYA1cR54AExvR_cmBO4ZxONE"   
-    url="https://healthservice.priaid.ch/diagnosis?symptoms=["+str(symptoms)+"]&gender="+str(gender)+"&year_of_birth="+str(dob)+"&token="+str(token)+"+&format=json&language=en-gb"
+    url="https://healthservice.priaid.ch/diagnosis?symptoms=["+str(symptoms)+"]&gender="+str(gender)+"&year_of_birth="+str(dob)+"&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFuaWtldDQ2OGtyQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc2lkIjoiMTgzNyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdmVyc2lvbiI6IjEwOCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGltaXQiOiIxMDAiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXAiOiJCYXNpYyIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGFuZ3VhZ2UiOiJlbi1nYiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvZXhwaXJhdGlvbiI6IjIwOTktMTItMzEiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXBzdGFydCI6IjIwMTktMDEtMjUiLCJpc3MiOiJodHRwczovL2F1dGhzZXJ2aWNlLnByaWFpZC5jaCIsImF1ZCI6Imh0dHBzOi8vaGVhbHRoc2VydmljZS5wcmlhaWQuY2giLCJleHAiOjE1NDg0NDI2MzIsIm5iZiI6MTU0ODQzNTQzMn0.vBXHGnlOg2cOTunfvi_y8bjXphREXClD6WPJmzp3quo&format=json&language=en-gb"
     results=requests.get(url);
-    print(results)
     results=results.json()
-    print(results);
-     id=results[0]["Issue"]["ID"];
-     url1="https://healthservice.priaid.ch/issues/"+str(id)+"/info?token="+token+"&format=json&language=en-gb"
-     answer=requests.get(url1);
-     answer=answer.json();
-     print(answer)
-     print(answer["Description"],answer["PossibleSymptoms"])
-     string_answer="Description--------------------\n\n"+str(answer["Description"])+"\n\n"+"Medical Condition-----------------\n\n"+str(answer["MedicalCondition"])+"\n\n"+"Possible Symptoms------------------------------\n\n"+str(answer["PossibleSymptoms"])+"\n\n"+"Treatment Description-------------------------\n\n"+str(answer["TreatmentDescription"]);
+    id=results[0]["Issue"]["ID"];
+    url1="https://healthservice.priaid.ch/issues/"+str(id)+"/info?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImFuaWtldDQ2OGtyQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvc2lkIjoiMTgzNyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdmVyc2lvbiI6IjEwOCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGltaXQiOiIxMDAiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXAiOiJCYXNpYyIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbGFuZ3VhZ2UiOiJlbi1nYiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvZXhwaXJhdGlvbiI6IjIwOTktMTItMzEiLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL21lbWJlcnNoaXBzdGFydCI6IjIwMTktMDEtMjUiLCJpc3MiOiJodHRwczovL2F1dGhzZXJ2aWNlLnByaWFpZC5jaCIsImF1ZCI6Imh0dHBzOi8vaGVhbHRoc2VydmljZS5wcmlhaWQuY2giLCJleHAiOjE1NDg0NDM5NDYsIm5iZiI6MTU0ODQzNjc0Nn0.XwRM1XrgkgrO39sfNQN0TtOEALztWoH_LNTqokQ4RXA&format=json&language=en-gb"
+    answer=requests.get(url1);
+    answer=answer.json();
+    #print(answer)
+    #print(answer["Description"],answer["PossibleSymptoms"])
+    string_answer="Description--------------------\n\n"+str(answer["Description"])+"\n\n"+"Medical Condition-----------------\n\n"+str(answer["MedicalCondition"])+"\n\n"+"Possible Symptoms------------------------------\n\n"+str(answer["PossibleSymptoms"])+"\n\n"+"Treatment Description-------------------------\n\n"+str(answer["TreatmentDescription"]);
     return string_answer;

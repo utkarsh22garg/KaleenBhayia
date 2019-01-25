@@ -10,6 +10,7 @@ from music import Music
 from send_message import Send_message
 from Meeting import Meeting
 from pnr import Pnr
+from wit_handle import WitHandler
 import sys
 import threading
 import os
@@ -19,6 +20,8 @@ from friend_location import FriendLocation
 #from song_mood import Mood
 from sympton import Sympton
 import webbrowser
+#from song_mood import Mood
+from sympton import Sympton
 class Kaleen_bhayia(object):
     def usage(self) -> str:
         return
@@ -27,7 +30,6 @@ class Kaleen_bhayia(object):
         string =message['content'].split()
         content="something went wrong"
         check=string[0].lower()
-        
         if check=="calculate":
             content=Calculator.calculate(string)
         elif check=="coding_contest":
@@ -107,5 +109,9 @@ class Kaleen_bhayia(object):
                 content="check out below link \n"+st;
             else:
                 content="Please type exact name :)\n"+st;
+        bot_handler.send_reply(message, content)
+        else:
+            #print(message['content'])
+            content=WitHandler.getInfo(message['content'])
         bot_handler.send_reply(message, content)
 handler_class = Kaleen_bhayia
