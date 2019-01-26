@@ -26,10 +26,11 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-    TextView text;
-    EditText name1,mailid1;
+    TextView text,textView;
+    EditText name1,mailid1,p11,p22,p33;
     Button save;
     SharedPreferences sp;
+    String p111,p222,p333;
     public static String name="no name";
     public static String mailid="no mail";
     String latitude1,longitude1;
@@ -44,9 +45,17 @@ public class MainActivity extends AppCompatActivity {
         name1 = findViewById(R.id.editText);
         save = findViewById(R.id.save);
         mailid1=findViewById(R.id.mail);
+        textView=findViewById(R.id.textView);
+        p11=findViewById(R.id.p1);
+        p22=findViewById(R.id.p2);
+        p33=findViewById(R.id.p3);
         SharedPreferences prefs = getSharedPreferences("user", MODE_PRIVATE);
         name = prefs.getString("name", "no_name");
         mailid=prefs.getString("mail","no_mail");
+        SharedPreferences pref = getSharedPreferences("emergency", MODE_PRIVATE);
+        p111 = pref.getString("person1", "no_name");
+        p222=pref.getString("person2","no_mail");
+        p333=pref.getString("person3","no_mail");
 
 
 
@@ -56,18 +65,37 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     name = name1.getText().toString();
                     mailid = mailid1.getText().toString();
-                    if (name.equals("") || mailid1.equals("") || mailid.contains("#") || mailid.contains(".") || mailid.contains("$") || mailid.contains("[") || mailid.contains("]")) {
-                        Toast.makeText(getApplicationContext(), "Please Enter Name and gmail username correctly", Toast.LENGTH_LONG).show();
+                    p111=p11.getText().toString();
+                    p222=p22.getText().toString();
+                    p333=p33.getText().toString();
+                    if (name.equals("") || mailid1.equals("") || mailid.contains("#") || mailid.contains(".") || mailid.contains("$") || mailid.contains("[") || mailid.contains("]")||p111.length()!=10||p222.length()!=10||p333.length()!=10) {
+                        Toast.makeText(getApplicationContext(), "Please Enter Name ,gmail username and emergency contacts correctly", Toast.LENGTH_LONG).show();
                     } else {
                         try {
                             SharedPreferences.Editor editor = getSharedPreferences("user", MODE_PRIVATE).edit();
                             editor.putString("name", name);
                             editor.putString("mail", mailid);
                             editor.apply();
+                            DatabaseReference mFirebaseDatabase;
+                            FirebaseDatabase mFirebaseInstance;
+                            mFirebaseInstance = FirebaseDatabase.getInstance();
+                            mFirebaseDatabase = mFirebaseInstance.getReference();
+                            mFirebaseDatabase.child("person1").setValue(p111);
+                            mFirebaseDatabase.child("person2").setValue(p222);
+                            mFirebaseDatabase.child("person3").setValue(p333);
+                            SharedPreferences.Editor editor1 = getSharedPreferences("emergency", MODE_PRIVATE).edit();
+                            editor1.putString("person1", p111);
+                            editor1.putString("person2", p222);
+                            editor1.putString("person3", p333);
+                            editor1.apply();
                             Toast.makeText(getApplicationContext(), "Credentials saved successfully", Toast.LENGTH_LONG).show();
                             mailid1.setVisibility(View.GONE);
                             name1.setVisibility(View.GONE);
                             save.setVisibility(View.GONE);
+                            p11.setVisibility(View.GONE);
+                            p22.setVisibility(View.GONE);
+                            p33.setVisibility(View.GONE);
+                            textView.setVisibility(View.GONE);
                             friendlocation();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -85,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
             mailid1.setVisibility(View.GONE);
             name1.setVisibility(View.GONE);
             save.setVisibility(View.GONE);
+            p11.setVisibility(View.GONE);
+            p22.setVisibility(View.GONE);
+            p33.setVisibility(View.GONE);
+            textView.setVisibility(View.GONE);
             try {
                 friendlocation();
             } catch (InterruptedException e) {

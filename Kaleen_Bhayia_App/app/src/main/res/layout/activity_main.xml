@@ -24,6 +24,43 @@
         android:hint="Enter your Email-id here"
         android:textSize="20dp"/>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Enter Three Emergency Contact Numbers" />
+
+    <EditText
+        android:id="@+id/p1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20dp"
+        android:hint="Enter first contact no."
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/p2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20dp"
+        android:hint="Enter second contact no."
+        android:inputType="textPersonName"
+         />
+
+    <EditText
+        android:id="@+id/p3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20dp"
+        android:hint="Enter third contact no."
+        android:inputType="textPersonName"
+        />
+
     <Button
         android:id="@+id/save"
         android:layout_width="match_parent"
