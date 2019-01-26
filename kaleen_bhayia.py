@@ -14,6 +14,7 @@ from wit_handle import WitHandler
 import sys
 import threading
 import os
+from jobs import JOBS
 import signal
 from subprocess import check_output
 from friend_location import FriendLocation
@@ -109,6 +110,8 @@ class Kaleen_bhayia(object):
                 content="check out below link \n"+st;
             else:
                 content="Please type exact name :)\n"+st;
+        elif check=="getjobs":
+            JOBS.getjobs()
         else:
             #print(message['content'])
             content=WitHandler.getInfo(message['content'])
