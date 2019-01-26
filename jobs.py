@@ -10,7 +10,9 @@ class JOBS:
 		string=""
 		b1=""
 		for jobs in jobdetails:
-			jobtitle=list(jobs.children)[1].getText().lstrip("\n").rstrip("\n");
-			jobtitle2=list(jobs.children)[3].getText().lstrip("\n").rstrip("\n");
-			string+="\n"+"JOB NAME ="+jobtitle+" COMPANY = "+jobtitle2+"\n";
-		print(string)
+			jobtitle=list(jobs.children)[1].getText().lstrip('\n').rstrip('\n');
+			#jobtitle=jobtitle.lstrip("\n");
+			jobtitle2=list(jobs.children)[3].getText().lstrip('\n').rstrip('\n');
+			#jobdetails=jobdetails.lstrip("\n")
+			string+="\n"+"JOB NAME:---"+jobtitle+" COMPANY:-- "+jobtitle2+"\n";
+		return string

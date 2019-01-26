@@ -23,6 +23,7 @@ from sympton import Sympton
 import webbrowser
 #from song_mood import Mood
 from sympton import Sympton
+from translate import Translate
 class Kaleen_bhayia(object):
     def usage(self) -> str:
         return
@@ -111,7 +112,11 @@ class Kaleen_bhayia(object):
             else:
                 content="Please type exact name :)\n"+st;
         elif check=="getjobs":
-            JOBS.getjobs()
+            content=JOBS.getjobs()
+        elif check=="translate":
+            stri=" ";
+            stri=stri.join(list(string[1:]))
+            content=Translate.translate(stri)
         else:
             #print(message['content'])
             content=WitHandler.getInfo(message['content'])
