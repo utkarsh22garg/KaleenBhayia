@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "162482314688",
+    "firebase_url": "https://hack36-app-module-2019-jan.firebaseio.com",
+    "project_id": "hack36-app-module-2019-jan",
+    "storage_bucket": "hack36-app-module-2019-jan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162482314688:android:f970ac42a2afe806",
+        "android_client_info": {
+          "package_name": "com.example.dell.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162482314688-1oj3o71v1bqask8ra1jede98cmk162fl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClXtUeBn010fEy0aMyZ3HJq6mngY-OusM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
