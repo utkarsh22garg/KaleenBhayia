@@ -25,6 +25,7 @@ import webbrowser
 from sympton import Sympton
 from translate import Translate
 from help import Help
+from nearby import Nearby
 class Kaleen_bhayia(object):
     def usage(self) -> str:
         return
@@ -121,6 +122,8 @@ class Kaleen_bhayia(object):
         elif check=="help":
             Help.Message();
             content="Message sent";
+        elif check=="nearby":
+            content=Nearby.Place(string[1]);
         else:
             #print(message['content'])
             content=WitHandler.getInfo(message['content'])
