@@ -2,6 +2,11 @@ from wit import Wit
 import json
 from calculate import Calculator
 from proxy import Proxy
+from cricknews import Cricket
+from joke import Joke
+from coding_contest import Coding
+from dean import Dean
+
 class WitHandler:
 	def getInfo(message_string):
 		client_access_token="PQCM32TG4TIECXXTP5EGA2AFDLHTAPMD"
@@ -29,6 +34,14 @@ class WitHandler:
 		elif check=="intent" and value=="proxy_area":
 			content=Proxy.getWorkingProxy()
 			content="Working Proxies in Your Area \n\n"+content
+		elif check=="intent" and value=="cricknews_get":
+			content = Cricket().news()
+		elif check=="intent" and value=="joke_tell":
+			content=Joke.tellJoke()
+		elif check=="intent" and value=='coding_get':
+			content=Coding().getList();
+		elif check=="intent" and value=='college_notice':
+			content=Dean.getNotice();
 		else:
 			content="I couldn't understand what you just said!! Please try again"
 
