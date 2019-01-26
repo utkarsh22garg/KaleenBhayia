@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
     String p111,p222,p333;
     public static String name="no name";
     public static String mailid="no mail";
-    String latitude1,longitude1;
+    double latitude1;
+    double longitude1;
     public static int updateflag=0;
     DatabaseReference databaseReference;
 
@@ -182,8 +183,8 @@ public class MainActivity extends AppCompatActivity {
                 Location location = locationManager
                         .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 if (location != null) {
-                    latitude1 = String.valueOf(location.getLatitude());
-                    longitude1 = String.valueOf(location.getLongitude());
+                    latitude1 = location.getLatitude();
+                    longitude1 = location.getLongitude();
                 }
             }
         }

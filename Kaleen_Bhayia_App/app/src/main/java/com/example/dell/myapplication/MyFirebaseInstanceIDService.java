@@ -34,7 +34,10 @@ import java.util.Map;
 public class MyFirebaseInstanceIDService extends FirebaseMessagingService implements LocationListener {
     public static String message_toSpeak="";
     JSONObject object;
-    String latitude,longitude,latitude1,longitude1;
+    String latitude;
+    String longitude;
+    double latitude1;
+    double longitude1;
     String name;
 
 
@@ -95,8 +98,8 @@ public class MyFirebaseInstanceIDService extends FirebaseMessagingService implem
                 Location location = locationManager
                         .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 if (location != null) {
-                    latitude1 = String.valueOf(location.getLatitude());
-                    longitude1 = String.valueOf(location.getLongitude());
+                    latitude1 = location.getLatitude();
+                    longitude1 = location.getLongitude();
                 }
             }
         }
