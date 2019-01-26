@@ -14,8 +14,6 @@ class Database(object):
 		latitude=latitude.val();
 		longitude=db.child("longitude").get();
 		longitude=longitude.val();
-		#print(latitude,longitude);
+		print(latitude,longitude);
 		webbrowser.open("https://www.google.com/maps/?q="+latitude+","+longitude);
 		return "https://www.google.com/maps/?q="+latitude+","+longitude;
-
-
