@@ -30,6 +30,8 @@ for text-to-speech (used in joke.py file) , *install following packages* :-
 
 ## for http-client
 * pip install ndg-httpsclient
+## for translator
+*  pip install googletrans
 
 
 
