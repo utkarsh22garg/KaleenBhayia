@@ -14,6 +14,7 @@ from wit_handle import WitHandler
 import sys
 import threading
 import os
+from jobs import JOBS
 import signal
 from subprocess import check_output
 from friend_location import FriendLocation
@@ -22,6 +23,8 @@ from sympton import Sympton
 import webbrowser
 #from song_mood import Mood
 from sympton import Sympton
+from translate import Translate
+from help import Help
 class Kaleen_bhayia(object):
     def usage(self) -> str:
         return
@@ -109,6 +112,15 @@ class Kaleen_bhayia(object):
                 content="check out below link \n"+st;
             else:
                 content="Please type exact name :)\n"+st;
+        elif check=="getjobs":
+            content=JOBS.getjobs()
+        elif check=="translate":
+            stri=" ";
+            stri=stri.join(list(string[1:]))
+            content=Translate.translate(stri)
+        elif check=="help":
+            Help.Message();
+            content="Message sent";
         else:
             #print(message['content'])
             content=WitHandler.getInfo(message['content'])
