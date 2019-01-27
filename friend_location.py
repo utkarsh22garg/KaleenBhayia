@@ -19,7 +19,7 @@ class FriendLocation(object):
 			lati=val['latitude']
 			longi=val['longitude']
 			if name==string:
-				return "https://www.google.com/maps/?q="+lati+","+longi
+				return "https://www.google.com/maps/?q="+str(lati)+","+str(longi)
 			st=st+name+"\n";
 		return st;
 

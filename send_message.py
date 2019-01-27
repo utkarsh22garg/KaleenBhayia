@@ -30,7 +30,7 @@ class Send_message(object):
 			val="Your phone will be ringing in a while"
 		elif string[0]=="where":
 			#val ="tracking your phone wait a while"
-			val=Database.getCoordinate();
-			val="Checkout the link \n"+val;
+			val=Database.getCoordinate()
+			val="Checkout the link \n"+str(val);
 		return val	
 		#print(result)
