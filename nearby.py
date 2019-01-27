@@ -16,7 +16,7 @@ class Nearby:
 		latitude=latitude.val();
 		longitude=db.child("longitude").get();
 		longitude=longitude.val();
-		url="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius=2500&types="+string+"&sensor=true&key=AIzaSyBvN7-4PKDpvpcw-dkTd_6-B5WuptirDSw"
+		url="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+str(latitude)+","+str(longitude)+"&radius=2500&types="+string+"&sensor=true&key=AIzaSyBvN7-4PKDpvpcw-dkTd_6-B5WuptirDSw"
 		results=requests.get(url).json();
 		res=results["results"]
 		string="";
