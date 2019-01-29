@@ -73,7 +73,7 @@ Kaleen Bhayia bot can :-
 1. Zulip Platform (using Zulip API)
 2. Languages -: Python3, JAVA (for APP)
 3. IDE Utilities :- Android Studio, Sublime TextEditor
-4. Wit.ai -: Easily create text or voice based bots that humans can chat with on their preferred messaging platform.
+4. Wit.ai -: Easily create text or voice based bots that humans can chat with on their preferred messaging platform (NLP).
 
 ## Contributors
 * [Aniket Kumar](https://github.com/Aniket468)  
