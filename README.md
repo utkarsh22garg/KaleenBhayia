@@ -51,24 +51,24 @@
 # Features
 
 Kaleen Bhayia bot can :-
-* Also Works on voice commands
-* Translate any Language
-* Get top Cricket News
-* Check PNR Status
-* Crack a Joke
-* List all the working Proxies (with Area Specification)
-* Find your Phone
-* Search any Friend's or your phone Location
-* Get meanings of english vocablury, so that you don't stop while discussing
-* Allows you to save your meetings
-* Diagnose any Disease or pain
-* List all the College notices
-* Find latest jobs available with location
-* Play any song
-* Show nearby places like Hospitals,Parks,etc
-* Send message using mobile phone 
-* Updates you with Upcoming Coding Contests
-* Lets you run above faetures with command of your preferences 
+>* Also Works on voice commands
+>* Translate any Language
+>* Get top Cricket News
+>* Check PNR Status
+>* Crack a Joke
+>* List all the working Proxies (with Area Specification)
+>* Find your Phone
+>* Search any Friend's or your phone Location
+>* Get meanings of english vocablury, so that you don't stop while discussing
+>* Allows you to save your meetings
+>* Diagnose about any Disease or pain
+>* List all the College notices
+>* Find latest jobs available with location
+>* Play any song
+>* Show nearby places like Hospitals,Parks,etc
+>* Send message using mobile phone 
+>* Updates you with Upcoming Coding Contests
+>* Lets you run above faetures with command of your preferences 
 
 ## Technology Stack Used
 1. Zulip Platform (using Zulip API)
