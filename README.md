@@ -1,5 +1,5 @@
-# KALEEN_BHAYIA
-##Team Kaleen Bhayia ke Ladke in HACK36
+# Welcome to KALEEN_BHAYIA bot!
+## Team Kaleen Bhayia ke Ladke in HACK36
 
 ## **Kaleen_Bhayia-Bot** is a zulip chatbot 
 
@@ -15,7 +15,7 @@
 
 
 # Libraries and Packages to be installed:
-##for text-to-speech (used in joke.py file) , *install following packages* :-
+## For text-to-speech (used in joke.py file) , *install following packages* :-
 * pip  install gTTS
 * sudo apt-get install mpg321
 * pip install --upgrade requests
@@ -48,7 +48,7 @@
 ## for translator
 *  pip install googletrans
 
-#Features
+# Features
 
 Kaleen Bhayia bot can :-
 * Also Works on voice commands
@@ -70,7 +70,7 @@ Kaleen Bhayia bot can :-
 * Updates you with Upcoming Coding Contests
 * Lets you run above faetures with command of your preferences 
 
-##Technology Stack Used
+## Technology Stack Used
 1. Zulip Platform (using Zulip API)
 2. Languages -: Python3, JAVA (for APP)
 3. IDE Utilities :- Android Studio, Sublime TextEditor
