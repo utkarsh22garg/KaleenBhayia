@@ -50,7 +50,7 @@
 # Features
 
 Kaleen Bhayia bot can :-
->* Also Works on voice commands (Zulip only provides text chatting... Run botInterface.py file explicitly for this)
+>* Also Works on voice commands (Run botInterface.py file explicitly for this)
 >* Translate any Language
 >* Get top Cricket News
 >* Check PNR Status
